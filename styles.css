@@ -1,0 +1,55 @@
+body {
+	background-image: url('./world.png');
+	background-size: cover;
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Roboto', sans-serif;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 400px;
+  perspective: 1000px;
+}
+
+.grid-item {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+  position: relative;
+  transition: all 1s linear;
+  transform-style: preserve-3d;
+}
+
+.front, .back {
+  border-radius: 10px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: absolute;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.front {
+  background-color: #F9EFE5;
+  color: #FBC592;
+  z-index: 2;
+  backface-visibility: hidden;
+}
+.back {
+  background-color: #FBC592;
+  color: #fff;
+  z-index: 1;
+  transform: rotateY(180deg);
+}
+
+.grid-item:hover {
+  transform: rotateY(180deg);
+}
